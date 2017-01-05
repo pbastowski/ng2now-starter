@@ -1,0 +1,24 @@
+div.hardware-accelarate {
+     -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+         -ms-transform: translate3d(0,0,0);
+          -o-transform: translate3d(0,0,0);
+             transform: translate3d(0,0,0);
+}
+
+html {
+  height: 100% !important;
+}
+
+body {
+  height: 100% !important;
+  background-color: #00709d;
+  background: linear-gradient(to bottom, #1e5799 0%,#2989d8 100%,#207cca 100%,#7db9e8 100%);
+}
+
+// Turn off the little (x) in IE11 text inputs, because it doesn't work
+// well with ngTable
+input[type=text]::-ms-clear {
+      width: 0;
+      height: 0;
+}

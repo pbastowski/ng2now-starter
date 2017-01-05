@@ -1,0 +1,16 @@
+.home-container
+    h1 This is the Home Page
+    pre {{ 'Rikkert' | hello:{abc:123} }}
+
+    label Text
+        input(ng-model="vm._data.text")
+    pre _text: {{ vm._data.text }}
+    pre text: {{ vm.data.text }}
+
+    hr
+
+    button(ng-click="vm.handleSubmit()") Click
+
+    hr
+
+    pre {{ vm.store | json }}
