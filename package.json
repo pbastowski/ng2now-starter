@@ -21,9 +21,9 @@
     "bootstrap": "4.0.0-alpha.6",
     "core-js": "2.4.1",
     "moment": "2.18.1",
-    "ng2now": "0.0.15",
-    "node-sass": "^4.1.1"
+    "ng2now": "0.0.15"
   },
+  
   "devDependencies": {
     "autoprefixer-loader": "3.2.0",
     "babel-core": "6.24.0",
