@@ -15,8 +15,7 @@ module.exports = {
             { test: /\.json/, loader: 'json-loader' },
             {
                 test: /\.(jade|pug)$/,
-                loader: 'pug-html-loader',
-                // loaders: ['html-loader', 'pug-html-loader?exports=false']
+                loaders: ['html-loader', 'pug-html-loader?exports=false']
             },
             {
                 test:   /\.html$/,
@@ -40,6 +39,14 @@ module.exports = {
                     name: '[name].[ext]?[hash]'
                 }
             },
+            // {
+            //     test: /\.(t|j)sx?$/,
+            //     loader: 'ts-loader',
+            //     options: {
+            //         transpileOnly: true,
+            //         appendTsSuffixTo: [/\.js$/]
+            //     }
+            // },
         ]
     },
     resolve: {
@@ -62,9 +69,9 @@ module.exports = {
         new webpack.DefinePlugin({
             'ENV': ENV,
         }),
-        new webpack.ProvidePlugin({
-            moment: 'moment',
-        }),
+        // new webpack.ProvidePlugin({
+        //     moment: 'moment',
+        // }),
     ],
 
     performance: {

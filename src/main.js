@@ -1,4 +1,4 @@
-import 'bootstrap/dist/css/bootstrap-flex.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import 'angular'
 import 'angular-ui-router'
 import 'angular-translate'

@@ -1,7 +1,9 @@
 pre.card.card-block.carla-footer
     .row
-        .col-xs-4 User: {{ vm.user.userId }}
-        .col-xs-4.text-xs-center
-            | FastTrack CARLA
-        .col-xs-4
-            span.float-xs-right Version {{ vm.config.version }}
+        .col-6.col-sm-4 User: {{ vm.user.userId }}
+        .col-sm-4.text-xs-center.hidden-xs-down
+            | MyApp brought to you with ❤️
+        .col-6.col-sm-4
+            span.float-right 
+                span.hidden-sm-down Version 
+                | {{ vm.config.version }}

@@ -1,37 +1,28 @@
 .app-navbar
     .nav-container
-        .navbar.navbar-light
+        .navbar.navbar-light.navbar-toggleable-sm.nav-pills
+
+            a.navbar-toggler.navbar-toggler-right(ng-click="vm.showMenu=!vm.showMenu")
+                span.navbar-toggler-icon
+        
             a.navbar-brand(style="display:inline-block; vertical-align: middle;")
-                img.hidden-md-down.visible(src="/static/img/Air_France-KLM_Logo.svg", height="60px", width="365")
-                img.hidden-lg-up.visible(src="/static/img/small-logo.png", height="58px")
+                img.hidden-md-down.visible(
+                    src="/static/img/Air_France-KLM_Logo.svg", 
+                    height="60px", width="365"
+                )
+                img.hidden-lg-up.visible(
+                    src="/static/img/small-logo.png", 
+                    height="58px"
+                )
 
-            ul.col-form-label.nav.nav-pills.navbar-nav.nav-menu
-
-                li.nav-item.hidden-xs-down
+            .collapse.navbar-collapse(
+                ng-style="{display:vm.showMenu?'block':'none'}",
+                ng-click="vm.showMenu=false"
+            )
+                .navbar-nav
                     a.nav-link(ui-sref="home", ui-sref-active="active") Home
-
-                li.nav-item.hidden-xs-down
                     a.nav-link(ui-sref="feature1", ui-sref-active="active") Feature1
-
-                li.nav-item.hidden-xs-down(ng-if="vm.user.roles.HERO")
-                    a.nav-link(ui-sref="hero", ui-sref-active="active") Hero Stuff
-
-                li.nav-item.hidden-xs-down
+                    a.nav-link(ui-sref="hero", ui-sref-active="active", ng-if="vm.user.roles.HERO") Hero Stuff
                     a.nav-link(href="{{vm.config.logoutUrl}}", ui-sref-active="active") Logout
-
-                li.nav-item.dropdown.hidden-sm-up.float-xs-right
-                    a.nav-link.dropdown-toggle(
-                        href='#',
-                        ng-click="vm.showMenu=!vm.showMenu"
-                    ) ☰
-                    .dropdown-menu(
-                        ng-style="{display:vm.showMenu?'block':'none'}",
-                        ng-click="vm.showMenu=false"
-                    )
-                        a.dropdown-item(href='{{vm.config.logoutUrl}}') Logout
-                        .dropdown-divider
-                        a.dropdown-item(ui-sref="home", ui-sref-active="active") Home
-                        a.dropdown-item(ui-sref="feature1", ui-sref-active="active") Feature1
-
-                span.float-xs-right.col-form-label-lg.app-name KITE
-
+                    
+            span.float-right.col-form-label-lg.app-name.hidden-sm-down MyApp
